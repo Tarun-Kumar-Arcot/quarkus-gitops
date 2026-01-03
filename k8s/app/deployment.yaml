@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-demo
+  namespace: hello-gitops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: redis-demo
+  template:
+    metadata:
+      labels:
+        app: redis-demo
+    spec:
+      containers:
+      - name: app
+        image: docker.io/<youruser>/redis-demo:1.0
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /q/health/live
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /q/health/ready
+            port: 8080
