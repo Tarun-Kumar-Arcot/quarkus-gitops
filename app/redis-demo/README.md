@@ -63,3 +63,4 @@ Easily start your REST Web Services
 # trigger ci
 # retrigger ci
 # trigger cicd
+# trigger ci pipeline
