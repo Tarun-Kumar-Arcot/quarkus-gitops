@@ -36,4 +36,5 @@ jobs:
         with:
           context: app/redis-demo
           push: true
-          tags: tarun-kumar-arcot/redis-demo:1.0
+          tags: tarunarcot/redis-demo:1.0
+
