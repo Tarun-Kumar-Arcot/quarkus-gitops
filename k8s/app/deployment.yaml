@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: docker.io/tarunarcot/redis-demo:2.0
+        image: docker.io/tarunarcot/redis-demo:1.0
         ports:
         - containerPort: 8080
         readinessProbe:
