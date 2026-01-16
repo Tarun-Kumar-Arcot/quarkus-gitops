@@ -30,3 +30,10 @@ spec:
           periodSeconds: 5
           timeoutSeconds: 2
           failureThreshold: 3
+        resources:
+          limits:
+            memory: "300Mi"
+            cpu: "256m"
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
