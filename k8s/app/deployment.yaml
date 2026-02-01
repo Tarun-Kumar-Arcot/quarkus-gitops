@@ -17,10 +17,14 @@ spec:
         image: docker.io/tarunarcot/redis-demo:1.0
         ports:
         - containerPort: 8080
+        env:
+        - name: QUARKUS_REDIS_HOSTS
+          value: redis://redis:6379
         readinessProbe:
           httpGet:
             path: /q/health/ready
             port: 8080
+
           
         livenessProbe:
           httpGet:
