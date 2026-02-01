@@ -17,6 +17,9 @@ spec:
         image: redis:7
         ports:
         - containerPort: 6379
+        env:
+        - name: QUARKUS_REDIS_HOSTS
+          value: redis://redis:6379
         volumeMounts:
         - name: redis-data
           mountPath: /data
