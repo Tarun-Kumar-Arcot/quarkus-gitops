@@ -24,18 +24,22 @@ spec:
           httpGet:
             path: /q/health/ready
             port: 8080
-          initialDelaySeconds: 20
-          periodSeconds: 10  
+          initialDelaySeconds: 30
+          timeoutSeconds: 3
+          periodSeconds: 10
+          failureThreshold: 6
         livenessProbe:
           httpGet:
             path: /q/health/live
             port: 8080
-          initialDelaySeconds: 60
+          initialDelaySeconds: 90
+          timeoutSeconds: 3
           periodSeconds: 20
+          failureThreshold: 6
         resources:
-          limits:
-            memory: "300Mi"
-            cpu: "256m"
           requests:
-            memory: "128Mi"
             cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "300Mi"
