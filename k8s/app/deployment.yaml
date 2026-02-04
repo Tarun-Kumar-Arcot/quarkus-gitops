@@ -15,6 +15,7 @@ spec:
       containers:
       - name: app
         image: docker.io/tarunarcot/redis-demo:1.1
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
